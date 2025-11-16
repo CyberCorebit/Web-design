@@ -3,30 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hccb</title>
-    <link rel="stylesheet" href="mystyle.css" />
+    <Atitle>CV-lnh</Atitle>
+    <style>
+      :root {
+        --dark: #2b2b2b;
+        --dark-2: #1f1f1f;
+        --muted: #6d6d6d;
+        --paper: #fffdf9;
+        --edge: #e6e6e6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 20px;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #f2f2f2 0%, #ececec 100%);
+        color: #222;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.45;
+      }
+
+      .cv {
+        max-width: 980px;
+        margin: 8px auto;
+        display: flex;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+      }
+      .sidebar {
+        flex: 0 0 40%;
+        padding: 28px 22px;
+        background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+        color: #fff;
+      }
+      .avatar {
+        text-align:center ;
+        margin-bottom: 12px;
+      }
+      .avatar svg {
+        width: 88px;
+        height: 88px;
+        display: block;
+        margin: 0 auto 8px;
+      }
+      .avatar .name {
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+      }
+      .avatar .role {
+        color: #d7d7d7;
+        margin-top: 6px;
+        font-size: 12px;
+      }
+      .block {
+        margin-top: 18px;
+      }
+      .block h2 {
+        margin: 0 0 8px;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 1px;
+        font-size: 13px;
+      }
+      .block p,
+      .block li {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+      }
+      .contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .contact li {
+        margin: 6px 0;
+      }
+      .skill {
+        margin: 12px 0;
+      }
+      .skill span {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+      .bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        width: var(--v, 60%);
+        background: linear-gradient(90deg, #ffd86b, #ff7a59);
+      }
+      .ref h3 {
+        color: #fff;
+        font-size: 13px;
+        margin: 0 0 4px;
+      }
+      .content {
+        flex: 0 0 60%;
+        padding: 24px;
+        background: linear-gradient(180deg, #fff 0%, #fbfbfb 100%);
+      }
+      .paper {
+        background: var(--paper);
+        border-radius: 10px;
+        padding: 18px 22px;
+        border: 1px solid var(--edge);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.06);
+      }
+      .paper-name {
+        font-family: "Amatic SC", "Segoe UI", Roboto, sans-serif;
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        margin: 0;
+      }
+      .paper-role {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 12px;
+      }
+      .group {
+        margin-top: 16px;
+      }
+      .group h3 {
+        text-transform: uppercase;
+        font-size: 15px;
+        margin: 0 0 8px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #ececec;
+      }
+      .item {
+        padding: 8px 0;
+        border-bottom: 1px dashed #eee;
+      }
+      .item h4 {
+        margin: 0;
+        font-size: 13px;
+      }
+      .period {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 6px 0 0;
+      }
+      .item p {
+        margin: 8px 0 0;
+      }
+
+      .certs {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .certs li {
+        margin: 6px 0;
+      }
+      .site-footer {
+        margin-top: 14px;
+        text-align: center;
+        color: #666;
+        font-size: 13px;
+      }
+      @media (max-width: 860px) {
+        .cv {
+          flex-direction: column;
+        }
+        .sidebar,
+        .content {
+          flex-basis: auto;
+        }
+        .paper-name {
+          font-size: 32px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="content" aria-label="Mô phỏng hồ cá dưới biển">
-      <div class="water">
-        <img src="bubble.png" alt="" aria-hidden="true" />
-      </div>
-      <div class="shark"><img src="shark.png" alt="Cá mập bơi ngang" /></div>
-      >
-      <div class="fish"><img src="goldFishSchool.png" alt="Đàn cá vàng" /></div>
-      <div class="water">
-        <img src="bubble.png" alt="" aria-hidden="true" />
-      </div>
-      <div class="water1">
-        <img src="bubble.png" alt="" aria-hidden="true" />
-      </div>
-      <div class="water2">
-        <img src="bubble.png" alt="" aria-hidden="true" />
-      </div>
-      <div class="diver1"><img src="diver1.png" alt="Thợ lặn 1" /></div>
-      <div class="diver2"><img src="diver2.png" alt="Thợ lặn 2" /></div>
-      <div class="turtle"><img src="turtle.png" alt="Rùa biển" /></div>
+    <div class="cv" role="main" aria-label="Curriculum Vitae của Phan Công Minh Chí">
+      <aside class="sidebar" aria-label="Thông tin cá nhân">
+        <figure class="avatar">
+          <svg
+            viewBox="0 0 128 128"
+            aria-hidden="true"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="128" height="128" rx="16" fill="transparent" />
+            <circle cx="64" cy="45" r="22" fill="#fff" />
+            <path d="M22 106c0-22 20-36 42-36s42 14 42 36" fill="#fff" />
+            <circle cx="64" cy="64" r="62" fill="rgba(0,0,0,0.0)" />
+          </svg>
+          <figcaption class="name">51.01.104.008</figcaption>
+          <div class="role">SINH VIÊN LỚP CÔNG NGHỆ THÔNG TIN C</div>
+        </figure>
+
+        <section class="block about">
+          <h2>MỤC TIÊU TƯƠNG LAI</h2>
+          <p>
+            Thành thạo ngôn ngữ lập trình C++,C#,python.
+            Mục tiêu nghề nghiệp tương lai là Game Developer
+          </p>
+        </section>
+        <section class="block">
+          <h2>LIÊN LẠC</h2>
+          <ul class="contact">
+            <li><strong>Số điện thoại:</strong> 0349175329</li>
+            <li><strong>Email:</strong> phancongminhchi@gmail.com</li>
+            <li>
+              <strong>Địa chỉ:</strong> 45/5 đường số 1, khu phố Thống Nhất 1,
+                phường Dĩ An, thành phố Hồ Chí Minh
+            </li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>KĨ NĂNG</h2>
+          <div class="KĨ NĂNG">
+            <span>C++</span>
+            <div class="bar"><i style="--v: 60%"></i></div>
+          </div>
+          <div class="KĨ NĂNG">
+            <span>Thành thạo tiếng anh</span>
+            <div class="bar"><i style="--v: 75%"></i></div>
+          </div>
+          <div class="KỸ NĂNG">
+            <span>Python</span>
+            <div class="bar"><i style="--v: 58%"></i></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>SỞ THÍCH</h2>
+          <article class="ref">
+            <p>Nghe nhạc</p>
+            <p>Chơi thể thao</p>
+            <p>Nấu ăn</p>
+          </article>
+          <article class="ref" style="margin-top: 8px">
+            <h3>Người đánh giá bài làm</h3>
+            <p>Mr.HienLuong</p>
+          </article>
+        </section>
+      </aside>
+      <main class="content" aria-label="Học vấn và kinh nghiệm">
+        <section class="paper" aria-labelledby="cv-title">
+          <header>
+            <h1 id="cv-title" class="paper-name">PHAN CÔNG MINH CHÍ</h1>
+            <div class="paper-role">Sinh viên Đại học Sư phạm thành phố Hồ Chí Minh</div>
+          </header>
+          <section class="group">
+            <h3>quá trình học</h3>
+            <article class="item">
+              <h4>TRÌNH ĐỘ HỌC VẤN: Tốt nghiệp trung học phổ thông 12/12 .</h4>
+              </p>
+            </article>
+          </section>
+          <section class="group">
+            <h3>ĐIỂM MẠNH CỦA BẢN THÂN</h3>
+            <section class="item">
+              <h4>Hiểu biết tiếng Anh cơ bản, có kiến thức về ngôn ngữ lập trình cơ bản.</h4>
+            </section>
+        </div>
+      </main>
     </div>
   </body>
 </html>
->
+
